@@ -1,0 +1,61 @@
+[{
+    "name": "AIP 197",
+    "sections": [{
+        "type": "independentStudy",
+        "sectionID": "874514",
+        "section": "A00",
+        "days": "TBA",
+        "time": "TBA",
+        "location": "TBA",
+        "teacher": "Wienhausen, Gabriele",
+        "openSeats": -1,
+        "seatLimit": -1,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }]
+}, {
+    "name": "AIP 197F",
+    "sections": [{
+        "type": "independentStudy",
+        "sectionID": "874515",
+        "section": "A00",
+        "days": "TBA",
+        "time": "TBA",
+        "location": "TBA",
+        "teacher": "Wienhausen, Gabriele",
+        "openSeats": -1,
+        "seatLimit": -1,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }]
+}, {
+    "name": "AIP 197P",
+    "sections": [{
+        "type": "independentStudy",
+        "sectionID": "874516",
+        "section": "A00",
+        "days": "TBA",
+        "time": "TBA",
+        "location": "TBA",
+        "teacher": "Wienhausen, Gabriele",
+        "openSeats": -1,
+        "seatLimit": -1,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }]
+}, {
+    "name": "AIP 197T",
+    "sections": [{
+        "type": "fieldwork",
+        "sectionID": "874517",
+        "section": "A00",
+        "days": "TBA",
+        "time": "TBA",
+        "location": "TBA",
+        "teacher": "Wienhausen, Gabriele",
+        "openSeats": -1,
+        "seatLimit": -1,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }]
+}]

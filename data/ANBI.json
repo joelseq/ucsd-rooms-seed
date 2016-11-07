@@ -1,0 +1,121 @@
+[{
+    "name": "ANBI 120",
+    "sections": [{
+        "type": "lecture",
+        "sectionID": "883733",
+        "section": "A00",
+        "days": "Tu",
+        "time": "9:00a-11:50a",
+        "location": "SSB 269",
+        "teacher": "Schoeninger, Margaret J",
+        "openSeats": 14,
+        "seatLimit": 20,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }, {
+        "type": "final",
+        "sectionID": null,
+        "section": null,
+        "days": "12/08/2016 Th",
+        "time": "8:00a-10:59a",
+        "location": "TBA",
+        "teacher": null,
+        "openSeats": null,
+        "seatLimit": null,
+        "waitlistSize": null,
+        "isEnrollable": false
+    }]
+}, {
+    "name": "ANBI 141",
+    "sections": [{
+        "type": "lecture",
+        "sectionID": "877578",
+        "section": "A00",
+        "days": "TuTh",
+        "time": "2:00p-3:20p",
+        "location": "CSB 005",
+        "teacher": "Schoeninger, Margaret J",
+        "openSeats": 20,
+        "seatLimit": 56,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }, {
+        "type": "final",
+        "sectionID": null,
+        "section": null,
+        "days": "12/08/2016 Th",
+        "time": "3:00p-5:59p",
+        "location": "TBA",
+        "teacher": null,
+        "openSeats": null,
+        "seatLimit": null,
+        "waitlistSize": null,
+        "isEnrollable": false
+    }]
+}, {
+    "name": "ANBI 148",
+    "sections": [{
+        "type": "lecture",
+        "sectionID": null,
+        "section": "A00",
+        "days": "MWF",
+        "time": "2:00p-2:50p",
+        "location": "WLH 2115",
+        "teacher": "Lafleur, Marni M",
+        "openSeats": null,
+        "seatLimit": null,
+        "waitlistSize": null,
+        "isEnrollable": false
+    }, {
+        "type": "lab",
+        "sectionID": "877580",
+        "section": "A01",
+        "days": "TBA",
+        "time": "TBA",
+        "location": "TBA",
+        "teacher": "Lafleur, Marni M",
+        "openSeats": 24,
+        "seatLimit": 40,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }, {
+        "type": "final",
+        "sectionID": null,
+        "section": null,
+        "days": "12/07/2016 W",
+        "time": "3:00p-5:59p",
+        "location": "TBA",
+        "teacher": null,
+        "openSeats": null,
+        "seatLimit": null,
+        "waitlistSize": null,
+        "isEnrollable": false
+    }]
+}, {
+    "name": "ANBI 159",
+    "sections": [{
+        "type": "lecture",
+        "sectionID": "884030",
+        "section": "A00",
+        "days": "MWF",
+        "time": "11:00a-11:50a",
+        "location": "WLH 2113",
+        "teacher": "Beasley, Melanie Marie",
+        "openSeats": 15,
+        "seatLimit": 40,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }, {
+        "type": "final",
+        "sectionID": null,
+        "section": null,
+        "days": "12/06/2016 Tu",
+        "time": "11:30a-2:29p",
+        "location": "TBA",
+        "teacher": null,
+        "openSeats": null,
+        "seatLimit": null,
+        "waitlistSize": null,
+        "isEnrollable": false
+    }]
+}]

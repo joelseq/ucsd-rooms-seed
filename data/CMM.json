@@ -1,0 +1,16 @@
+[{
+    "name": "CMM 246",
+    "sections": [{
+        "type": "seminar",
+        "sectionID": "884940",
+        "section": "A00",
+        "days": "F",
+        "time": "12:00p-1:00p",
+        "location": "TBA TBA",
+        "teacher": "Varki, Ajit P Esko, Jeffrey D. Gagneux, Pascal Bode, Lars",
+        "openSeats": "Unlim",
+        "seatLimit": null,
+        "waitlistSize": 0,
+        "isEnrollable": true
+    }]
+}]
