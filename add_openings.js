@@ -31,11 +31,28 @@ Rooms.find({}, (err, rooms) => {
 
     // Get all the open times on each day (inverse of times being used)
     const mondayOpenTimes = getOpenTimes(room, 'M', mondayTimes);
+    const tuesdayOpenTimes = getOpenTimes(room, 'Tu', tuesdayTimes);
+    const wednesdayOpenTimes = getOpenTimes(room, 'W', wednesdayTimes);
+    const thursdayOpenTimes = getOpenTimes(room, 'Th', thursdayTimes);
+    const fridayOpenTimes = getOpenTimes(room, 'F', fridayTimes);
 
-    console.log(mondayOpenTimes);
+    // Save all the times to the DB
+    saveTimes(mondayOpenTimes);
+    saveTimes(tuesdayOpenTimes);
+    saveTimes(wednesdayOpenTimes);
+    saveTimes(thursdayOpenTimes);
+    saveTimes(fridayOpenTimes);
   });
 });
 
+/**
+ * getOpenTimes - finds all the times that the room is unused on the specified
+ * day
+ * @param  {Room} room [the room to find the open times of]
+ * @param  {String} day  [the day to find open times on]
+ * @param  {[String]} arr  [Array of string times for when the room is used]
+ * @return {[Openings]}      [Returns an array of openings]
+ */
 function getOpenTimes(room, day, arr) {
   const returnArray = [];
 
@@ -67,7 +84,7 @@ function getOpenTimes(room, day, arr) {
 }
 
 /**
- * sortTimes - function to sort strings based on their time value
+ * sortTimes - comparator function to sort strings based on their time value
  */
 function sortTimes(a, b) {
   let firstTime = a.time.split('-')[0];
@@ -98,7 +115,11 @@ function sortTimes(a, b) {
   }
 }
 
-
+/**
+ * getTimeInNumber - converts a string time into an int
+ * @param  {String} time [the time string to convert]
+ * @return {Number}      [the int value of the time in mins (0 - 1440)]
+ */
 function getTimeInNumber(time) {
   let timeSplit = time.split(':');
   let hours = parseInt(timeSplit[0]);
@@ -116,4 +137,18 @@ function getTimeInNumber(time) {
 
     return 720 + ( hours * 60) + minutes;
   }
+}
+
+/**
+ * saveTimes - saves all the open times to the DB
+ * @param  {[Openings]} openTimesArr [The array of open times]
+ */
+function saveTimes(openTimesArr) {
+  openTimesArr.forEach(openTime => {
+    Openings.create(openTime, (err, saved) => {
+      if(err) {
+        console.log(err);
+      }
+    });
+  });
 }
