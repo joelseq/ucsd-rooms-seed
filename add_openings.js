@@ -74,9 +74,9 @@ function getOpenTimes(room, day, arr) {
       returnArray.push({ room, day, start: previousEndTime, end: startTime });
     }
     // This is an if as well because sometimes there is only one element (corner case)
-    // If it is the last element, the end time is 1440
+    // If it is the last element, the end time is 1439
     if (i === arr.length-1) {
-      returnArray.push({ room, day, start: endTime, end: 1440 });
+      returnArray.push({ room, day, start: endTime, end: 1439 });
     }
   }
 
