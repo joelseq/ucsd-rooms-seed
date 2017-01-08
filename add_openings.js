@@ -4,46 +4,36 @@ const Openings = require('./models/openings');
 
 mongoose.connect('mongodb://localhost:27017/room-finder');
 
+mongoose.Promise = global.Promise;
+
 Rooms.find({}, (err, rooms) => {
   if (err) { console.log(err); }
 
   rooms.forEach(room => {
-    // Get all the times for the respective days
-    let mondayTimes = room.times.filter((time) => time.day === 'M');
-    let tuesdayTimes = room.times.filter((time) => time.day === 'Tu');
-    let wednesdayTimes = room.times.filter((time) => time.day === 'W');
-    let thursdayTimes = room.times.filter((time) => time.day === 'Th');
-    let fridayTimes = room.times.filter((time) => time.day === 'F');
-
-    // Sort the times in ascending order
-    mondayTimes.sort(sortTimes);
-    tuesdayTimes.sort(sortTimes);
-    wednesdayTimes.sort(sortTimes);
-    thursdayTimes.sort(sortTimes);
-    fridayTimes.sort(sortTimes);
-
-    // Make the arrays only contain the times
-    mondayTimes = mondayTimes.map(day => day.time);
-    tuesdayTimes = tuesdayTimes.map(day => day.time);
-    wednesdayTimes = wednesdayTimes.map(day => day.time);
-    thursdayTimes = thursdayTimes.map(day => day.time);
-    fridayTimes = fridayTimes.map(day => day.time);
-
-    // Get all the open times on each day (inverse of times being used)
-    const mondayOpenTimes = getOpenTimes(room, 'M', mondayTimes);
-    const tuesdayOpenTimes = getOpenTimes(room, 'Tu', tuesdayTimes);
-    const wednesdayOpenTimes = getOpenTimes(room, 'W', wednesdayTimes);
-    const thursdayOpenTimes = getOpenTimes(room, 'Th', thursdayTimes);
-    const fridayOpenTimes = getOpenTimes(room, 'F', fridayTimes);
-
-    // Save all the times to the DB
-    saveTimes(mondayOpenTimes);
-    saveTimes(tuesdayOpenTimes);
-    saveTimes(wednesdayOpenTimes);
-    saveTimes(thursdayOpenTimes);
-    saveTimes(fridayOpenTimes);
+    filterOpenTimesByDay('M', room);
+    filterOpenTimesByDay('Tu', room);
+    filterOpenTimesByDay('W', room);
+    filterOpenTimesByDay('Th', room);
+    filterOpenTimesByDay('F', room);
   });
 });
+
+/**
+ * filterOpenTimesByDay - saves all openings for a specific day to the DB.
+ * @param  {String} day - the string of the day
+ * @param {Room} room - the room for which to filter
+ */
+function filterOpenTimesByDay(day, room) {
+  let timesForDay = room.times.filter(time => time.day === day);
+
+  timesForDay.sort(sortTimes);
+
+  timesForDay = timesForDay.map(day => day.time);
+
+  openTimesForDay = getOpenTimes(room, day, timesForDay);
+
+  saveTimes(openTimesForDay);
+}
 
 /**
  * getOpenTimes - finds all the times that the room is unused on the specified
@@ -146,7 +136,7 @@ function getTimeInNumber(time) {
 function saveTimes(openTimesArr) {
   openTimesArr.forEach(openTime => {
     Openings.create(openTime, (err, saved) => {
-      if(err) {
+      if (err) {
         console.log(err);
       }
     });
