@@ -4,6 +4,8 @@ const fs = require('fs');
 
 mongoose.connect('mongodb://localhost:27017/room-finder');
 
+mongoose.Promise = global.Promise;
+
 fs.readdir('./data', (err, files) => {
   if (err) {
     return console.log('Could not read files');
