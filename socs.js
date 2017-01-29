@@ -5,7 +5,7 @@ const departments = require('./codes.json');
 
 console.log('Number of departments:', departments.length);
 
-const QUARTER = 'FA16';
+const QUARTER = 'WI17';
 const TIMEOUT = 10000;
 
 const total = departments.length;
@@ -25,17 +25,3 @@ for(let i = 180; i < total; i++) {
       console.log(`Something went wrong for ${departments[i]}`);
     });
 }
-
-// departments.forEach(dept => {
-//   socsjs.searchDepartment(QUARTER, dept, TIMEOUT, false)
-//     .then(result => {
-//       jsonfile.writeFile(`./data/${dept}.json`, result, (err) => {
-//         if(err) {
-//           console.log(err);
-//         }
-//       });
-//     })
-//     .catch(err => {
-//       console.log('Something went wrong for ' + dept);
-//     })
-// });
