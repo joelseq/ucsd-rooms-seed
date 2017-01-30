@@ -1,6 +1,10 @@
 const Rooms = require('./models/room');
 const mongoose = require('mongoose');
 const fs = require('fs');
+const buildingList = require('./buildings.json').reduce((a, v) => { 
+  a[v["code"]] = v;
+  return a;
+}, {});
 
 mongoose.connect('mongodb://localhost:27017/room-finder');
 
@@ -23,7 +27,17 @@ fs.readdir('./data', (err, files) => {
             if (!found) {
               // If section does not include TBA, create the room
               if ( !(section.location.includes('TBA')) ) {
-                Rooms.create({ name: section.location, times: [] }, (err, created) => {
+                let building = section.location.split(" ")[0];
+                let roomInfo = { 
+                  name: section.location, 
+                  times: [], 
+                  building: {} 
+                };
+
+                if (building in buildingList) {
+                  roomInfo["building"] = buildingList[building]
+                }
+                Rooms.create(roomInfo, (err, created) => {
                   if (err) {
                     console.log(err);
                   } else {
