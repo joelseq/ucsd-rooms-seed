@@ -5,7 +5,7 @@ const departments = require('./codes.json');
 
 console.log('Number of departments:', departments.length);
 
-const QUARTER = 'WI17';
+const QUARTER = 'SP17';
 const TIMEOUT = 10000;
 
 const total = departments.length;
