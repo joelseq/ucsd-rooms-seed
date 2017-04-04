@@ -16,6 +16,7 @@
   "author": "Joel Sequeira",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.16.0",
     "jsonfile": "^2.4.0",
     "mongoose": "^4.6.5",
     "socsjs": "^1.0.10"
