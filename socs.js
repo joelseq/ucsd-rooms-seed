@@ -12,7 +12,7 @@ const total = departments.length;
 let counter = 0;
 let data = [];
 
-for(let i = 180; i < total; i++) {
+for(let i = 160; i < total; i++) {
   socsjs.searchDepartment(QUARTER, departments[i], TIMEOUT, false)
     .then(result => {
       jsonfile.writeFile(`./data/${departments[i]}.json`, result, (err) => {
