@@ -1,7 +1,7 @@
 const axios = require('axios');
 const jsonfile = require('jsonfile');
 
-const QUARTER = 'SP17';
+const QUARTER = 'FA17';
 
 axios
   .get(`https://act.ucsd.edu/scheduleOfClasses/subject-list.json?selectedTerm=${QUARTER}`)
